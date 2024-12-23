@@ -1,25 +1,18 @@
+// pages/index.js
 "use client";
 
-import { useEffect, useState } from "react";
+import dynamic from "next/dynamic";
 import Image from "next/image";
+import Footer from "./Components/footer";
+
+const VideoBackground = dynamic(() => import("./Components/videobackground"), { ssr: false });
 
 export default function Home() {
-  const [isClient, setIsClient] = useState(false);
-
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-
   return (
     <div className="min-h-screen flex flex-col items-center justify-center">
-      {isClient && (
-        <video autoPlay loop muted playsInline className="absolute w-full h-full object-cover">
-          <source src="/assets/weavy.m4v" type="video/mp4; codecs=hvc1" />
-          <source src="/assets/weavy.webm" type="video/webm; codecs=vp9" />
-        </video>
-      )}
+      <VideoBackground />
 
-      <div className={`flex-grow-0 pt-10 transition-opacity duration-1000`}>
+      <div className="flex-grow-0 pt-10 transition-opacity duration-1000">
         <div className="relative flex flex-col justify-between items-center">
           <Image src="/assets/uniteddigitalsolution.svg" width={200} height={50} alt="logo" />
         </div>
@@ -32,9 +25,7 @@ export default function Home() {
         </h2>
       </div>
 
-      <footer className="relative flex flex-wrap gap-8 items-center justify-center px-4 py-10 text-center">
-        <h3 className="font-bold">© Copyright 2017 | Email: info@uniteddigitalsolution.com</h3>
-      </footer>
+      <Footer />
     </div>
   );
 }
