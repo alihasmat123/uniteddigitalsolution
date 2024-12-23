@@ -9,7 +9,7 @@ const VideoBackground = dynamic(() => import("./Components/videobackground"), { 
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center">
+    <div className="min-h-screen relative flex flex-col items-center justify-center">
       <VideoBackground />
 
       <div className="flex-grow-0 pt-10 transition-opacity duration-1000">
