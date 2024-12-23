@@ -14,7 +14,7 @@ export default function Home() {
     <div className="min-h-screen flex flex-col items-center justify-center">
       {isClient && (
         <video autoPlay loop muted playsInline className="absolute w-full h-full object-cover">
-          <source src="/assets/earth.m4v" type="video/mp4; codecs=hvc1" />
+          <source src="/assets/weavy.m4v" type="video/mp4; codecs=hvc1" />
           <source src="/assets/weavy.webm" type="video/webm; codecs=vp9" />
         </video>
       )}
